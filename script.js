@@ -1,12 +1,4 @@
 
- async function renderReadme() {
-    const resp = await fetch("readme.md")
-    if(!resp.ok) return
-    document.querySelector(".container").insertAdjacentHTML('beforeend','<div class="readme">'+window.marked(await resp.text()) + "</div>")
-    Prism.highlightAll()
- }
-
-
 function humanFileSize(bytes, si) {
     bytes = parseInt(bytes,10)
     var thresh = si ? 1000 : 1024;
@@ -37,4 +29,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
 import "https://cdn.jsdelivr.net/npm/marked/marked.min.js"
 
-renderReadme().catch(console.error)
+
